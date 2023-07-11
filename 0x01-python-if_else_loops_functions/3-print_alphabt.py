@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-for alphabet in range(97, 123):
-    if (alphabet == 101) or (alphabet == 113):
-        continue
-print(chr(alphabet).format(), end="")
+for alphabet in range(ord('a'), ord('z') + 1):
+    if chr(alphabet) != 'e' and chr(alphabet) != 'q':
+        print(chr(alphabet).format(), end="")
