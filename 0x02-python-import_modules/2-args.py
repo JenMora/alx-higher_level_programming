@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    """A function that prints the number of arguments parsed\
-            to the command lines"""
+
     import sys
     count = len(sys.argv)
     if count == 1:
