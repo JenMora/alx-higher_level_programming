@@ -11,4 +11,4 @@ def print_matrix_integer(matrix=[[]]):
     """
 
     for row in matrix:
-        print(" ".join([str(coloumn) for coloumn in row]))
+        print(" ".join([f"{coloumn:3d}" for coloumn in row]))
