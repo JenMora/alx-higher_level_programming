@@ -8,11 +8,11 @@ def max_integer(my_list=[]):
     The biggest integer of the list, or None if the list is empty.
     """
 
-    if not my_list: 
+    if not my_list:
         return None
     else:
         max_integer = my_list[0]
-    for integer in range (len(my_list)):
-        if my_list[integer]> max_integer:
+    for integer in range(len(my_list)):
+        if my_list[integer] > max_integer:
             max_integer = my_list[integer]
             return (max_integer)
