@@ -8,7 +8,7 @@ def max_integer(my_list=[]):
     The biggest integer of the list, or None if the list is empty.
     """
 
-    if not my_list:
+    if len(my_list) == 0:
         return None
     else:
         max_integer = my_list[0]
