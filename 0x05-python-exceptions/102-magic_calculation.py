@@ -7,7 +7,7 @@ def magic_calculation(a, b):
         for i in range(1, 3):
             if i > a:
                 raise Exception("out of range")
-                ret = ret + a ** b / i
+                ret = ret + (a ** b) / i
     except Exception:
         ret = b + a
     return ret
