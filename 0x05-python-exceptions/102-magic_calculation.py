@@ -6,10 +6,8 @@ def magic_calculation(a, b):
     try:
         for i in range(1, 3):
             if i > a:
-                raise Exception("Too far")
-            else:
+                raise Exception("out of range")
                 ret = ret + a ** b / i
     except Exception:
         ret = b + a
-        break
     return ret
