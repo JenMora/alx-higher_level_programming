@@ -10,12 +10,10 @@ def safe_print_list(my_list=[], x=0):
     """
 
     try:
-        number_of_elements = 0
         for i in range(x):
             print("{}".format(my_list[i]), end="")
-            number_of_elements += 1
-    except IndexError:
-        pass
-    finally:
-        print()
-    return (number_of_elements)
+            print("")
+            return x
+    except (IndexError, TypeError):
+        print("")
+    return (i)
