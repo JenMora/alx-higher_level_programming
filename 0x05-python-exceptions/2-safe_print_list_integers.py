@@ -11,11 +11,13 @@ def safe_print_list_integers(my_list=[], x=0):
 
     elements = 0
     try:
-    for i in range(x):
-        if isinstance(my_list[i], int):
-            print("{:d}".format(my_list[i]), end="")
-            elements += 1
-            print("")
-        except (TypeError, ValueError)
-        raise
-    return (elements)
+        for i in range(x):
+            if isinstance(my_list[i], int):
+                print("{:d}".format(my_list[i]), end="")
+                elements += 1
+                print("")
+    except (TypeError, ValueError)
+    raise
+
+
+return (elements)
