@@ -9,5 +9,5 @@ def magic_calculation(a, b):
                 raise Exception("out of range")
                 ret = ret + (a ** b) / i
     except Exception:
-        ret = b + a
+        ret = a + b
     return ret
