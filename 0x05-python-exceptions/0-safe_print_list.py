@@ -9,12 +9,13 @@ def safe_print_list(my_list=[], x=0):
     The real number of elements printed
     """
 
-    number_of_elements = 0
+    try:
+        number_of_elements = 0
         for i in range(x):
-            try:
-            print("{}".format(my_list[i]), end=" ")
+            print("{}".format(my_list[i]), end="")
             number_of_elements += 1
     except IndexError:
-        break
-        print("")
+        pass
+    finally:
+        print()
     return (number_of_elements)
