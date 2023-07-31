@@ -15,6 +15,6 @@ def safe_print_list(my_list=[], x=0):
             print("{}".format(my_list[i]), end=" ")
             number_of_elements += 1
     except IndexError:
-        pass
-        print("cannot output x because it is out of range")
-    return number_of_elements
+        break
+        print("")
+    return (number_of_elements)
