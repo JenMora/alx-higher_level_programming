@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-"""this is a documentattion to call the class Square"""
-
-
 class Square:
-    """Here we through in pass as told in the question"""
+    """
+    An empty class representing an empty square.
+
+    Attributes:
+        No attributes are parsed to this class
+
+    Methods:
+        No methods used for thnis class
+    """
     pass
