@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
-
-A class that Defines a class Square.
-This function creates an empty class
-displaying it's dictionary
+Square module
+This module illustrates the use of the Square class
+defined in the 0-square module.
+It creates the Square object, prints the square type
+and displays its dictionary representation.
 """
 
 
 class Square:
-
-    """Represent a square. intentionally left blank"""
-
+    """ This class is intentionally left blank."""
     pass
