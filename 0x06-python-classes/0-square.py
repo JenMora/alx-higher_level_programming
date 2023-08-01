@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" An emoty class that defines a square"""
+"""Define a class Square."""
 
 
 class Square:
 
-    """ This function represents a square"""
+    """Represent a square."""
