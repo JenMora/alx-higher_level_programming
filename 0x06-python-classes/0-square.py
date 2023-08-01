@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+A python square module illustrating the use of the Square class
+
+It creates the Square object, prints the square type
+
+and displays its dictionary representation.
+
+"""
 
 class Square:
     """
