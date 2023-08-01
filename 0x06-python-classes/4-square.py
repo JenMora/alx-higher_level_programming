@@ -14,17 +14,17 @@ class Square:
         self.size = size
 
     @property
-    #"""A decorator defining the property
-    #method to make size accessible
-    #"""
+    # """A decorator defining the property
+    # method to make size accessible
+    # """
     def size(self):
         """This method sets the current size of the square."""
         return (self.__size)
 
     @size.setter
-    #"""This decorator allows to set
-    #value to the size argument
-    #"""
+    # """This decorator allows to set
+    # value to the size argument
+    # """
     def size(self, value):
         """This method contains the value size of the square"""
 
