@@ -5,10 +5,9 @@ class Square:
     A class representing a square.
 
     Attributes:
-        None
+        No attributes parsed
 
     Methods:
-        None
+        This in an empty class, no methods used
     """
     pass
-
