@@ -3,7 +3,6 @@
 
 
 class Square:
-    pass
 
 
 """ This function represents a square"""
