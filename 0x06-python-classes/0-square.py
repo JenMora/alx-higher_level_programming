@@ -4,5 +4,4 @@
 
 class Square:
 
-
-""" This function represents a square"""
+    """ This function represents a square"""
