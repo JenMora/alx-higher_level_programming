@@ -1,11 +1,13 @@
 import math
-""" 
+"""
 A Python class MagicClass that does exactly the
 same as the given Python bytecode
 """
+
 class MagicClass:
     """
-    A class representing a circle with magic calculations for area and circumference.
+    A class representing a circle with magic
+    calculations for area and circumference.
 
     Attributes:
         __radius (float):
@@ -47,4 +49,3 @@ class MagicClass:
             The circumference of the circle.
         """
         return 2 * math.pi * self.__radius
-
