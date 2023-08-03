@@ -9,15 +9,13 @@ def safe_print_list_integers(my_list=[], x=0):
     The real number of integers printed
     """
 
-    elements = 0
+    element = 0
     try:
         for i in range(x):
             if isinstance(my_list[i], int):
                 print("{:d}".format(my_list[i]), end="")
-                elements += 1
-                print('')
+                element += 1
+        print("")
     except IndexError:
         raise
-
-
-    return (elements)
+    return element
