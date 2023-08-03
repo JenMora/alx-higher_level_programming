@@ -6,5 +6,5 @@ def safe_print_division(a, b):
         division_result = None
         return None
     finally:
-        print("Inside result: {}".format(divsion_result))
+        print("Inside result: {}".format(division_result))
         return division_result
