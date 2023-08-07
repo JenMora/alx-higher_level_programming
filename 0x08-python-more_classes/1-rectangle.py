@@ -5,12 +5,25 @@ This is a class that defines a rectangle based on 0-rectangle.py
 
 
 class Rectangle:
+    """
+    This class represents a rectangle
+    """
+
     def __init__(self, width=0, height=0):
+        """
+        this method initializes the rectangle
+        args:
+        width
+        height
+        """
         self.width = width
         self.height = height
 
         @property
         def width(self):
+            """
+            this method fetches the rectangle width
+            """
             return self.__width
 
         @width.setter
@@ -25,6 +38,7 @@ class Rectangle:
 
         @property
         def height(self):
+            """ This method gets the rectangle height"""
             return self.__height
 
         @height.setter
