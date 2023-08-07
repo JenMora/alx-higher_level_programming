@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""This function defines a Rectangle class."""
+# 4-rectangle.py
+"""The class defines a Rectangle class."""
 
 
 class Rectangle:
-    """This class represent a rectangle."""
+    """This class  represents a rectangle."""
 
     def __init__(self, width=0, height=0):
         """This method initialize a new Rectangle.
@@ -29,7 +30,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """This method sets the height of the Rectangle."""
+        """Thismethod sets the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -52,19 +53,20 @@ class Rectangle:
 
     def __str__(self):
         """This method returns the printable representation of the Rectangle.
+        Represents the rectangle with the # character.
         """
-
         if self.__width == 0 or self.__height == 0:
             return ("")
+
         rect_angle = []
         for h in range(self.__height):
             [rect_angle.append('#') for w in range(self.__width)]
             if h != self.__height - 1:
                 rect_angle.append("\n")
-                return ("".join(rect_angle))
+        return ("".join(rect_angle))
 
     def __repr__(self):
-        """This method returns the string representation of the Rectangle."""
+        """Return the string representation of the Rectangle."""
         rect_angle = "Rectangle(" + str(self.__width)
         rect_angle += ", " + str(self.__height) + ")"
         return (rect_angle)
