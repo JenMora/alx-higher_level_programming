@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" This module defines a locked class with no attributes"""
+
+
 class LockedClass:
     """
     A class that prevents the user from dynamically
