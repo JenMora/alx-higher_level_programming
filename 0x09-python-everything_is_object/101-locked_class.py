@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 class LockedClass:
     """
-    A class that prevents the user from dynamically creating new instance attributes,
+    A class that prevents the user from dynamically
+    creating new instance attributes,
     except if the new instance attribute is called 'first_name'.
     """
 
@@ -16,8 +17,10 @@ class LockedClass:
             value: The value to set for the attribute.
 
         Raises:
-            AttributeError: If the attribute is not 'first_name' and doesn't already exist.
+            AttributeError: If the attribute is not
+            'first_name' and doesn't already exist.
         """
         if not hasattr(self, name) and name != 'first_name':
-            raise AttributeError(f"'LockedClass' object has no attribute '{name}'")
+            raise AttributeError(f"'LockedClass' object has\
+                    no attribute '{name}'")
         super().__setattr__(name, value)
