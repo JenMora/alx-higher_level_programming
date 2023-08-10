@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module has the magic_calculation function"""
 
 def magic_calculation(a, b):
     aresult = 0
