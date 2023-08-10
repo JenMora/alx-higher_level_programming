@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This function defines a class Square."""
+"""This module has a that function defines a class Square."""
 
 
 class Square:
