@@ -2,7 +2,7 @@
 """
 This module contains say_my_name function
 The function checks if name is a string
-The function prints first_name and last_name to stdout
+and prints first_name and last_name to stdout
 A TypeError is raised when first_name or lastname is not a string
 """
 
