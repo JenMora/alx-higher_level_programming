@@ -1,4 +1,6 @@
 class Jeniffer:
+"""This is a module that describes a person"""
+
 
     def __init__(self, name, age, sign, likes, school):
         self.name = name
