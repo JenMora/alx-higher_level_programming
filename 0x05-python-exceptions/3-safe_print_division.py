@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module has the safe division function"""
 def safe_print_division(a, b):
     try:
         division_result = a / b

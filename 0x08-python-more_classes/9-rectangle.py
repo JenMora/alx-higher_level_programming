@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""The class defines a Rectangle class."""
+"""The module  defines a Rectangle class."""
 
 
 class Rectangle:
     """This class  represents a rectangle.
-    Attributes:
+    Arguments:
     number_of_instances (int): The number of Rectangle instances
     print_symbol (any): The symbol used for string reprensative
     """

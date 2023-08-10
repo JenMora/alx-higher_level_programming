@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
 
-This is module that divides an element by a number indicated
+This is a module that divides an element by a number indicated
 
 """
 
 
 def matrix_divided(matrix, div):
     """
-    This method divides the elements of a matrix
+    This method divides the elements of a matrix by a given number
     """
     if isinstance(div, int) == 0 and isinstance(div, float) == 0:
         raise TypeError("div must be a number")

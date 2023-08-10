@@ -8,8 +8,8 @@ This module contains the function text_indentation
 def text_indentation(text):
     """
     The text Indentation Method prints a text with 2 new lines after ., ? and :
-    Args:
-    text: the argument parsed
+    Arguments:
+    text: The argument parsed
     """
     if type(text) is not str:
         raise TypeError("text must be a string")

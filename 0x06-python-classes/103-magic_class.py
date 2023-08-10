@@ -1,6 +1,6 @@
 import math
 """
-A Python class MagicClass that does exactly the
+A Python module with a MagicClass that does exactly the
 same as the given Python bytecode
 """
 

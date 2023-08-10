@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module has the add_integer function
-add_integer function: This function calculates sum of two integers a and b
+This function calculates sum of two integers a and b
 and prints the result to stdout
 TypeError occurs when a or b is not an integer
 """

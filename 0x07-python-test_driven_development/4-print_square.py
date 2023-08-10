@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module prints a square with the character #
+This is a module prints a square with the character #
 """
 
 
