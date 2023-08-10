@@ -3,7 +3,7 @@ def safe_print_integer(value):
     """ A function that prints ann integer with "{:d}".format
     Agrs:
     Value(int)
-    Returns
+    Returns:
     false if a type error occurs, otherwise true
     """
 
