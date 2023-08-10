@@ -16,7 +16,7 @@ def max_integer(list=[]):
     if len(list) == 0:
         return None
     ret = list[0]
-    if type(ret)is not int and type(ret) is not float:
+    if type(ret) is not int and type(ret) is not float:
         raise TypeError("result must be an integer")
     integer = 1
     while integer < len(list):
