@@ -10,8 +10,10 @@ def matrix_mul(m_a, m_b):
         list: The result of the matrix multiplication.
 
     Raises:
-        TypeError: If the input matrices are not lists or contain invalid elements.
-        ValueError: If the input matrices are empty or incompatible for multiplication.
+        TypeError: If the input matrices are not lists or
+        contain invalid elements.
+        ValueError: If the input matrices are empty or
+        incompatible for multiplication.
     """
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
