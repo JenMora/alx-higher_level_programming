@@ -7,22 +7,25 @@ _______________________________________________
 >>> MyList = __import__('1-my_list').MyList
 
  Documentation check to ensure that the method and class are non-empty
+ Validates the existence of a meaningful docstring
 >>> doc = __import__("1-my_list").__doc__
->>> len(doc) > 5 
+>>> len(doc) > 20
 True
 
 >>> doc = __import__("1-my_list").MyList.__doc__
->>> len(doc) > 5
+>>> len(doc) > 20
 True
 
 >>> doc = __import__("1-my_list").MyList.print_sorted.__doc__
->>> len(doc) > 5
+>>> len(doc) > 20
 True
 
  Type check, for MyList class and the print_sorted method
+ validate the existence of the class MyList
 >>> type(MyList)
 <class 'type'>
 
+Validate the existence of the method(function)print_sorted
 >>> type(MyList.print_sorted)
 <class 'function'>
 
