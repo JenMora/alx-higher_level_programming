@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+This a MyList module that defines a class that prints a
+sorted list
+"""
+
+
 class MyList(list):
     """
     This is a class Mylist that inherist from the class list
