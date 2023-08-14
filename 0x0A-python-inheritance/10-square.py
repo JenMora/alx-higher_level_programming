@@ -8,7 +8,9 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """
-    this class represents a square"""
+    this class represents a square
+    Performs instantiation of private instance attribute: size
+    """
 
     def __init__(self, size):
         """
@@ -32,4 +34,4 @@ class Square(Rectangle):
         Returns a string representation of the Square.
         """
 
-        return "[Rectangle] {}/{}".format(self.__size, self.__size)
+        return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
