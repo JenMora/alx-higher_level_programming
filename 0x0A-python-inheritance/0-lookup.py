@@ -9,4 +9,12 @@ Arguments:
 
 
 def lookup(obj):
+    """
+    This method returns a list of ojects using teh inbuilt ("dir")command
+    args:
+    obj
+    returns
+    a list of objects
+    """
+
     return dir(obj)
