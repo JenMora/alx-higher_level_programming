@@ -5,10 +5,10 @@ from Rectangle (9-rectangle.py):
 """
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """
     this class represents a square"""
-
 
     def __init__(self, size):
         """
@@ -18,6 +18,7 @@ class Square(Rectangle):
         """
         self.integer_validator("size", size)
         self.__size = size
+
     def area(self):
         """
         This method calculates the area of the square.
@@ -30,4 +31,5 @@ class Square(Rectangle):
         """
         Returns a string representation of the Square.
         """
+
         return "[Rectangle] {}/{}".format(self.__size, self.__size)
