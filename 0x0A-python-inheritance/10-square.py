@@ -2,31 +2,30 @@
 """
 Module contains Square class
 inherited from Rectangle class
-Prints area
 """
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
     """
-    This class inherits from Rectangle class.
-    Performs instantiation of private instance attribute: size.
+    This class inherits from Rectangle class and
+    instantiatiates of private instance attribute: size.
     """
     def __init__(self, size):
         """
-        Initialiazes private instance attribute: size.
+        This method initialiazes private instance attribute: size of the square
         """
         self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
         """
-        Calculates area.
+        This method calculates and returns the area of the square
         """
         return self.__size * self.__size
 
     def __str__(self):
         """
-        Returns informal string representation of an object.
+        Returns the string representation of the square
         """
         return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
