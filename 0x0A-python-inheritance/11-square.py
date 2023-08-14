@@ -29,6 +29,7 @@ class Square(Rectangle):
         Returns the string representation of the square
         """
         return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
+
     def __str__(self):
         """
         Returns the  string representation of an the square
