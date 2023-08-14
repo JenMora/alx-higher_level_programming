@@ -5,28 +5,28 @@ ______________________________________________
 _______________________________________________
  import MyList
 >>> MyList = __import__('1-my_list').MyList
-# edge case 1
-# Documentation check to ensure that the method and class are non-empty
+
+ Documentation check to ensure that the method and class are non-empty
 >>> doc = __import__("1-my_list").__doc__
->>> len(doc) > 0 #  confirms a meaningful docstring
+>>> len(doc) > 5 
 True
 
 >>> doc = __import__("1-my_list").MyList.__doc__
->>> len(doc) > 0 # validates the existence of a docstring
+>>> len(doc) > 5
 True
 
 >>> doc = __import__("1-my_list").MyList.print_sorted.__doc__
->>> len(doc) > 0
+>>> len(doc) > 5
 True
-# edge case 2
-# Type check, for MyList class and the print_sorted method
+
+ Type check, for MyList class and the print_sorted method
 >>> type(MyList)
 <class 'type'>
 
 >>> type(MyList.print_sorted)
 <class 'function'>
-# edge case 3
-# Class MyList Usage and ensures that print method is a function
+
+ Class MyList Usage and ensures that print method is a function
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
