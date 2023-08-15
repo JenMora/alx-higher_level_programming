@@ -13,6 +13,4 @@ def read_file(filename=""):
 
     with open(filename, "r", encoding="utf-8") as file:
         """with closes the file instead of file.close"""
-
-        data = file.read()
-        print(data)
+        print(file.read(), end="")
