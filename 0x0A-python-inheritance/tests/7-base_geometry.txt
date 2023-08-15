@@ -1,40 +1,56 @@
-``BaseGeometry`` module
+Module: 7-base_geometry
 =======================
 
-Using ``base_geometry`` function
-================================
+Introduction:
+--------------
+The `7-base_geometry` module defines the `BaseGeometry` class
+which offers geometric operations and validation methods.
+
+Usage:
+------
+To use the `BaseGeometry` class, import it using the following code:
+```python
+
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> docs = __import__("7-base_geometry").__doc__
->>> len(docs) > 0
+>>> len(docs) > 5
 True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.__doc__
->>> len(docs) > 0
+>>> len(docs) > 5
 True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.area.__doc__
->>> len(docs) > 0
+>>> len(docs) > 5
 True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
->>> len(docs) > 0
+>>> len(docs) > 5
 True
 
 >>> bg = BaseGeometry()
 
+	validating with an integer
+
 >>> bg.integer_validator("my_int", 12)
+
+	validating with a non-integer
 
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
+	validating with 0
+
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
 ...
 ValueError: age must be greater than 0
+
+	valiadting with a negative  integer
 
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
