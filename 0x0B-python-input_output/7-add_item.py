@@ -1,50 +1,14 @@
 #!/usr/bin/python3
 """
-This is a module that defines functions taht add all arguments to a python list
-and then saves the arguments to a file
-The list must be saved as a JSON representation
+this method imports sys module, save_to_json_file
+and load_from_json files to add system arguments and save them to a list.
 """
+
 
 from os.path import exists
 import sys
-import json
-# import from 5-save_to_json_file.py
-# import from 6-load_from_json_file.py
-
-
-def save_to_json_file(my_obj, filename):
-    """
-    this is a method that  writes an Object to a
-    text file, using a JSON representation
-
-    args
-    my obj: the object of the function
-    filename: the text file to which the object will be written
-
-    Returns
-    the written file
-    """
-
-    with open(filename, "w", encoding="utf-8") as file:
-        a_file = json.dumps(my_obj)
-        return file.write(a_file)
-
-
-def load_from_json_file(filename):
-    """
-    this is a method that  creates an Object from a JSON representation
-
-    args
-    my obj: the object of the function
-    filename: the text file to which the object will be written
-
-    Returns
-    the created file
-    """
-
-    with open(filename, 'r') as file:
-        a_file = json.load(file)
-        return a_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 if __name__ == "__main__":
