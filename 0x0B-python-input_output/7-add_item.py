@@ -1,63 +1,37 @@
 #!/usr/bin/python3
 """
-This is a module that defines functions taht add all arguments to a python list
-and then saves the arguments to a file
-The list must be saved as a JSON representation
+    This module adds all arguments to a Python list
+    and saves them in a file
 """
 
-from os.path import exists
+
 import sys
+from os import path
 from typing import List
-# imporit from 5-save_to_json_file.py
-# import from 6-load_from_json_file.py
 
 
-def save_to_json_file(my_obj, filename):
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+
+def add_item_json_file(file: str, new_args: List[str]):
     """
-    this is a method that  writes an Object to a
-    text file, using a JSON representation
+        This method creates a list, the args in the lists are added
+        saved the updated list to a file
 
-    args
-    my obj: the object of the function
-    filename: the text file to which the object will be written
-
-    Returns
-    the written file
+        file: the files from the imported modules
+        args: the diffrent arguments args to be added/appended
     """
+    if not path.exists(file):
+        save_to_json_file([], file)
 
-    with open(filename, "w", encoding="utf-8") as file:
-        a_file = json.dumps(my_obj)
-        return file.write(a_file)
+    list_update = load_from_json_file(file)
+    list_update.extend(args)
 
-
-def load_from_json_file(filename):
-    """
-    this is a method that  creates an Object from a JSON representation
-
-    args
-    my obj: the object of the function
-    filename: the text file to which the object will be written
-
-    Returns
-    the created file
-    """
-
-    with open(filename, 'r') as file:
-        a_file = json.load(file)
-        return a_file
+    save_to_json_file(list_updatet, file)
 
 
-if __name__ == "__main__":
-    """Adds all the passed arguments to a python list"""
-    filename = "add_item.json"
+if __name__ == '__main__':
+    file = 'add_item.json'
     new_args = sys.argv[1:]
-    list_args = []
-
-    try:
-        if exists(filename):
-            list_args = load_from_json_file(filename)
-        else:
-            list_args = []
-        list_args.extend(new_args)
-    finally:
-        save_to_json_file(list_args, filename)
+    funct_adds_to_list(file, new_args)
