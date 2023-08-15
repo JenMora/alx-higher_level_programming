@@ -26,4 +26,3 @@ class Student:
         """
         dict_1 = self.__dict__
         return dict_1
-
