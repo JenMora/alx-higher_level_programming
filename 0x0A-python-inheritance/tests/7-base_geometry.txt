@@ -15,19 +15,19 @@ To use the `BaseGeometry` class, import it using the following code:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> docs = __import__("7-base_geometry").__doc__
->>> len(docs) > 5
+>>> len(docs) > 20
 True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.__doc__
->>> len(docs) > 5
+>>> len(docs) > 20
 True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.area.__doc__
->>> len(docs) > 5
+>>> len(docs) > 20
 True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
->>> len(docs) > 5
+>>> len(docs) > 20
 True
 
 >>> bg = BaseGeometry()
