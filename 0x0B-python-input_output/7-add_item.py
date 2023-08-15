@@ -7,8 +7,8 @@ The list must be saved as a JSON representation
 
 from os.path import exists
 import sys
-import json
-# import from 5-save_to_json_file.py
+from typing import List
+# imporit from 5-save_to_json_file.py
 # import from 6-load_from_json_file.py
 
 
