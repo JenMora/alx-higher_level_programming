@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-this method imports sys module, save_to_json_file
-and load_from_json files to add system arguments and save them to a list.
+Imports sys module, save_to_json_file
+and load_from_json file.
 """
 
 
@@ -10,18 +10,17 @@ import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-
 if __name__ == "__main__":
-    """Adds all the passed arguments to a python list"""
+    """
+    Adds all arguments to a Python list, and then save them to
+    a file.
+    """
     filename = "add_item.json"
-    new_args = sys.argv[1:]
-    list_args = []
-
-    try:
-        if exists(filename):
-            list_args = load_from_json_file(filename)
-        else:
-            list_args = []
-        list_args.extend(new_args)
-    finally:
-        save_to_json_file(list_args, filename)
+    args = sys.argv[1:]
+    args_list = []
+    if exists(filename):
+        args_list = load_from_json_file(filename)
+    else:
+        args_list = []
+    args_list.extend(args)
+    save_to_json_file(args_list, filename)
