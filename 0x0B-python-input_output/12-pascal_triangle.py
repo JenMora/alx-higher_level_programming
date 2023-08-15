@@ -4,7 +4,6 @@ This is a module that returns a list of lists of integers
 """
 
 
-
 def pascal_triangle(n):
     """
     This method generate Pascal's triangle up to the specified number of rows.
