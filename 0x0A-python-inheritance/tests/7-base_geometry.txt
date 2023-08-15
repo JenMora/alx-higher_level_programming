@@ -22,7 +22,7 @@ True
 
 >>> docs = __import__('7-base_geometry').BaseGeometry.area.__doc__
 >>> len(docs) > 20
-Ture
+True
 
 >>> docs = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
 >>> len(docs) > 0
