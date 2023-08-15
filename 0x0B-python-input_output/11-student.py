@@ -38,6 +38,8 @@ class Student:
         This method replaces all attributes for the student object
         """
 
+        # return self.__dict__update(json)
+
         if "first_name" in json:
             self.first_name = jason["first_name"]
         if "last_name" in json:
