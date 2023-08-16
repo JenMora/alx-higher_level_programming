@@ -1,37 +1,25 @@
 #!/usr/bin/python3
 """
-    This module adds all arguments to a Python list
-    and saves them in a file
+Adds all argument to a python list + saves to file.
 """
-
-
 import sys
-from os import path
-from typing import List
+import json
 
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-
-
-def add_item_json_file(file: str, new_args: List[str]):
-    """
-        This method creates a list, the args in the lists are added
-        saved the updated list to a file
-
-        file: the files from the imported modules
-        args: the diffrent arguments args to be added/appended
-    """
-    if not path.exists(file):
-        save_to_json_file([], file)
-
-    list_update = load_from_json_file(file)
-    list_update.extend(new_args)
-
-    save_to_json_file(list_update, file)
-
-
-if __name__ == '__main__':
-    file = 'add_item.json'
-    new_args = sys.argv[1:]
-    add_item_json_file(file, new_args)
+try:
+    with open('add_item.json', 'r') as f:
+        cont_r = f.read()
+        cont = json.loads(cont_r)
+        for arg in sys.argv[1:]:
+            cont.append(arg)
+        cont_r = json.dumps(cont)
+except Exception:
+    with open('add_item.json', 'w') as f:
+        cont = []
+        for arg in sys.argv[1:]:
+            cont.append(arg)
+        cont_r = json.dumps(cont)
+        f.write(cont_r)
+finally:
+    with open('add_item.json', 'w') as f:
+        f.write(cont_r)
