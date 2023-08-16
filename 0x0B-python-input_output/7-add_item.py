@@ -26,12 +26,12 @@ def add_item_json_file(file: str, new_args: List[str]):
         save_to_json_file([], file)
 
     list_update = load_from_json_file(file)
-    list_update.extend(args)
+    list_update.extend(new_args)
 
-    save_to_json_file(list_updatet, file)
+    save_to_json_file(list_update, file)
 
 
 if __name__ == '__main__':
     file = 'add_item.json'
     new_args = sys.argv[1:]
-    funct_adds_to_list(file, new_args)
+    add_item_json_file(file, new_args)
