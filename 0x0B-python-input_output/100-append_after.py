@@ -25,6 +25,7 @@ def append_after(filename="", search_string="", new_string=""):
                 # check of a search_string in each line
                 content[count:count + 1] = [content[count], new_string]
                 count +=1
+            count +=1
 
     with open(filename, "w", encoding='utf-8') as i_file:
             i_file.writelines(content)
