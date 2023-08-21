@@ -17,10 +17,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ reresents the width of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """sets the width value of the rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -29,10 +31,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ defines the height of the rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """sets vakue for the rectangle height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -41,10 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """represents the x attribute"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """sets value to the x attribute"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -53,10 +59,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ this is the y attribute"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """sets the value of the y attribute"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -64,20 +72,24 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """defines the rectangle area"""
         return self.width * self.height
 
     def display(self):
+        """displays the rectangle"""
         for items in range(self.y):
             print()
         for items in range(self.height):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
+        """ returns a string representation"""
         return '[{}] ({}) {}/{} - {}/{}'.\
                 format(type(self).__name__, self.id, self.x, self.y,
                        self.width, self.height)
 
     def update(self, *args):
+        """updates the rectangle arguments, changing attributes"""
         arg_num = len(args)
         if arg_num >= 1:
             self.id = args[0]
@@ -91,7 +103,7 @@ class Rectangle(Base):
             self.y = args[4]
 
     def update(self, *args, **kwargs):
-        """Replace args with kwargs, cahnging attributes"""
+        """Replace args with kwargs, changing attributes"""
         if args:
             attr = ["id", "width", "height", "x", "y"]
             for items in range(len(args)):

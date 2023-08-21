@@ -3,6 +3,8 @@
 
 
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -64,3 +66,80 @@ class Base:
         if dummy_instance:
             dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        a_file = cls.__name__ + ".json"
+        try:
+            with open(a_file, "r") as file:
+                json_str = file.read()
+                list_dicts = cls.from_json_string(json_str)
+                instances = [cls.create(**dict) for dict in list_dicts]
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        if list_objs is None:
+            list_objs = []
+
+        a_file = cls.__name__ + ".csv"
+        with open(a_file, "w", newline="") as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif cls.__name__ == "Square":
+                    row = [obj.id, obj.size, obj.x, obj.y]
+                    writer.writerow(row)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes in CSV"""
+        a_file = cls.__name__ + ".csv"
+        objects = []
+        try:
+            with open(a_file, "r", newline="") as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        id, height, width, x, y = map(int, row)
+                        instance = cls(width, height, x, y, id)
+                    elif cls.__name__ == "Square":
+                        id, size, x, y = map(int, row)
+                        instance = cls(size, x, y, id)
+                        objects.append(instance)
+        except FileNotFoundError:
+            pass
+        return objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        from models.base import Base
+
+        window = turtle.Screen()
+        window.bgcolor("Green")
+
+        for rect in list_rectangles:
+            turtle.penup()
+            turtle.goto(rect.x, rect.y)
+            turtle.pendown()
+            for items in range(4):
+                turtle.forward(rect.width)
+                turtle.left(45)
+
+        for square in list_squares:
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
+            for items in range(8):
+                turtle.forward(square.size)
+                turtle.left(45)
+
+        turtle.done()
