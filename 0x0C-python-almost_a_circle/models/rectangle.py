@@ -76,3 +76,26 @@ class Rectangle(Base):
         return '[{}] ({}) {}/{} - {}/{}'.\
                 format(type(self).__name__, self.id, self.x, self.y,
                        self.width, self.height)
+
+    def update(self, *args):
+        arg_num = len(args)
+        if arg_num >= 1:
+            self.id = args[0]
+        if arg_num >= 2:
+            self.width = args[1]
+        if arg_num >= 3:
+            self.height = args[2]
+        if arg_num >= 4:
+            self.x = args[3]
+        if arg_num >= 5:
+            self.y = args[4]
+
+    def update(self, *args, **kwargs):
+        """Replace args with kwargs, cahnging attributes"""
+        if args:
+            attr = ["id", "width", "height", "x", "y"]
+            for items in range(len(args)):
+                setattr(self, attr[items], args[items])
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
