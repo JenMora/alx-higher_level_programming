@@ -9,7 +9,7 @@ class Rectangle(Base):
     """This is a rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ This method instantiates the class"""
+        """ This method instantiates the class Base"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -18,7 +18,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ reresents the width of the rectangle"""
+        """ represents the width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -86,8 +86,8 @@ class Rectangle(Base):
     def __str__(self):
         """ returns a string representation"""
         return '[{}] ({}) {}/{} - {}/{}'.\
-                format(type(self).__name__, self.id, self.x, self.y,
-                       self.width, self.height)
+            format(type(self).__name__, self.id, self.x, self.y,
+                   self.width, self.height)
 
     def update(self, *args):
         """updates the rectangle arguments, changing attributes"""
