@@ -1,22 +1,28 @@
 #!/usr/bin/python3
 """
-This is a rectangle module
+This is a rectangle module inheriting from the 
+Base class
 
 """
 
 
 from models.base import Base
+"""
+This is the parent class
+
+"""
 
 
 class Rectangle(Base):
     """
-    This is a rectangle class
+    This is a rectangle class inheriting from Base
 
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ 
-        This method instantiates the class Base
+        This method instantiates the private instance and calls the
+        super class with id
 
         """
         if type(width) != int:
