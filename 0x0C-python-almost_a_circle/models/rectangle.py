@@ -153,11 +153,11 @@ class Rectangle(Base):
                         self.id = arg
             elif arg_num == 1:
                 self.width = arg
-            elif arg_num >= 2:
+            elif arg_num == 2:
                 self.height = arg
-            elif arg_num >= 3:
+            elif arg_num == 3:
                 self.x = arg
-            elif arg_num >= 4:
+            elif arg_num == 4:
                 self.y = arg
             arg_num += 1
 
