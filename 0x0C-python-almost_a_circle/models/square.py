@@ -5,7 +5,7 @@ This is a module that defines a square
 """
 
 
-from models.rectangle import Rectangle
+from models.square import Square
 """
 This is the parent class to the square child class
 
