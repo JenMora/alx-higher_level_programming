@@ -131,28 +131,28 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        returns a string representation
+        returns a string representation of the rectangle
 
         """
-        return '[{}] ({}) {}/{} - {}/{}'.\
-            format(type(self).__name__, self.id, self.x, self.y,
-                   self.width, self.height)
+        return '[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}'\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args):
         """
         updates the rectangle arguments, changing attributes
 
         """
-        arg_num = len(args)
-        if arg_num >= 1:
+
+        if arg_num and len(args) > 0:
+            if arg_num >= 1:
             self.id = args[0]
-        if arg_num >= 2:
+            if arg_num >= 2:
             self.width = args[1]
-        if arg_num >= 3:
+            if arg_num >= 3:
             self.height = args[2]
-        if arg_num >= 4:
+            if arg_num >= 4:
             self.x = args[3]
-        if arg_num >= 5:
+            if arg_num >= 5:
             self.y = args[4]
 
     def update(self, *args, **kwargs):
