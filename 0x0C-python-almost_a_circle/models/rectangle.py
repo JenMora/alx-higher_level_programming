@@ -25,22 +25,6 @@ class Rectangle(Base):
         super class with id
 
         """
-        if type(width) != int:
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        if type(height) != int:
-            raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        if type(x) != int:
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        if type(y) != int:
-            raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
         super().__init__(id)
         self.width = width
         self.height = height
@@ -185,6 +169,10 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        This is a dictionary representation of the rectangle
+        """
+
         return {
                 "id": self.id,
                 "width": self.width,
