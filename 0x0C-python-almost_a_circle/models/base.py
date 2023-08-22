@@ -87,16 +87,20 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """serializes in CSV"""
         if list_objs is None or list_objs == []:
-
+            return
+        class_name = cls.__name__
         a_file = cls.__name__ + ".csv"
         with open(a_file, "w", newline="") as file:
             writer = csv.writer(file)
             for obj in list_objs:
-                if cls.__name__ == "Rectangle":
+                if class_name == "Rectangle":
                     row = [obj.id, obj.width, obj.height, obj.x, obj.y]
-                elif cls.__name__ == "Square":
+                elif class_name == "Square":
                     row = [obj.id, obj.size, obj.x, obj.y]
                     writer.writerow(row)
+        json_output = json.dumps([OrderedDict(obj.to_dictionary())\
+        for obj in list_objs], indent=4, sort_keys=True)
+        print(json_output)
 
     @classmethod
     def load_from_file_csv(cls):
