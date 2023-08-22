@@ -86,8 +86,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """serializes in CSV"""
-        if list_objs is None:
-            list_objs = []
+        if list_objs is None or list_objs == []:
 
         a_file = cls.__name__ + ".csv"
         with open(a_file, "w", newline="") as file:
@@ -97,7 +96,8 @@ class Base:
                     row = [obj.id, obj.width, obj.height, obj.x, obj.y]
                 elif cls.__name__ == "Square":
                     row = [obj.id, obj.size, obj.x, obj.y]
-                    writer.writerow(row)
+                    writer = csv.DictWriter(file, row=row)
+                    writer.writerow(obj.to_dictionary)
 
     @classmethod
     def load_from_file_csv(cls):
