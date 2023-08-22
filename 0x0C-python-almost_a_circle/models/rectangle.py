@@ -145,15 +145,15 @@ class Rectangle(Base):
 
         if arg_num and len(args) > 0:
             if arg_num >= 1:
-            self.id = args[0]
+                self.id = args[0]
             if arg_num >= 2:
-            self.width = args[1]
+                self.width = args[1]
             if arg_num >= 3:
-            self.height = args[2]
+                self.height = args[2]
             if arg_num >= 4:
-            self.x = args[3]
+                self.x = args[3]
             if arg_num >= 5:
-            self.y = args[4]
+                self.y = args[4]
 
     def update(self, *args, **kwargs):
         """
