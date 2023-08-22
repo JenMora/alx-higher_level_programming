@@ -23,14 +23,14 @@ class Rectangle(Base):
         """
         This method instantiates the private instance and calls the
         super class with id
+        initiates a new rectangle
 
         """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        self.id = id
+        super().__init__(id)
 
     @property
     def width(self):
@@ -135,7 +135,7 @@ class Rectangle(Base):
 
         """
         return '[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}'\
-            .format(self.id, self.__x, self.__y, self.__width, self.__height)
+            .format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args):
         """
