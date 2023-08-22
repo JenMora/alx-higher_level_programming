@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is a rectangle module inheriting from the 
+This is a rectangle module inheriting from the
 Base class
 
 """
@@ -20,7 +20,7 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ 
+        """
         This method instantiates the private instance and calls the
         super class with id
 
@@ -34,7 +34,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ 
+        """
         represents the width of the rectangle
 
         """
@@ -54,7 +54,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ 
+        """
         defines the height of the rectangle
 
         """
@@ -132,7 +132,7 @@ class Rectangle(Base):
     def __str__(self):
         """
         returns a string representation
-        
+
         """
         return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y,
