@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"This is a rectangle module"""
+"""This is a rectangle module"""
 
 
 from models.base import Base
