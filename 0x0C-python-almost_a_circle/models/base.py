@@ -98,7 +98,7 @@ class Base:
                 elif class_name == "Square":
                     row = [obj.id, obj.size, obj.x, obj.y]
                     writer.writerow(row)
-        json_output = json.dumps([OrderedDict(obj.to_dictionary())\
+        json_output = json.dumps([(obj.to_dictionary())\
         for obj in list_objs])
         print(json_output)
 
