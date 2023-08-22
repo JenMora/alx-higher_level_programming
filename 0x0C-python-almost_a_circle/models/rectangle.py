@@ -143,17 +143,25 @@ class Rectangle(Base):
 
         """
 
-        if arg_num and len(args) > 0:
-            if arg_num >= 1:
+        if args and len(args) > 0:
+            arg_num = 0
+            for arg in args:
+                if arg_num == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+            elif arg_num >= 1:
                 self.id = args[0]
-            if arg_num >= 2:
+            elif arg_num >= 2:
                 self.width = args[1]
-            if arg_num >= 3:
+            elif arg_num >= 3:
                 self.height = args[2]
-            if arg_num >= 4:
+            elif arg_num >= 4:
                 self.x = args[3]
-            if arg_num >= 5:
+            elif arg_num >= 5:
                 self.y = args[4]
+            arg_num += 1
 
     def update(self, *args, **kwargs):
         """
