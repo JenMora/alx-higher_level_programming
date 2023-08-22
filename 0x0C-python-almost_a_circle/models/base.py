@@ -96,8 +96,7 @@ class Base:
                     row = [obj.id, obj.width, obj.height, obj.x, obj.y]
                 elif cls.__name__ == "Square":
                     row = [obj.id, obj.size, obj.x, obj.y]
-                    writer = csv.DictWriter(file, row=row)
-                    writer.writerow(obj.to_dictionary)
+                    writer.writerow(row)
 
     @classmethod
     def load_from_file_csv(cls):
