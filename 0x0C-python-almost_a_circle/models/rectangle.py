@@ -142,24 +142,17 @@ class Rectangle(Base):
         updates the rectangle arguments, changing attributes
 
         """
-
-        if args and len(args) != 0:
-            arg_num = 0
-            for arg in args:
-                if arg_num == 0:
-                    if arg is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
-                    else:
-                        self.id = arg
-            elif arg_num == 1:
-                self.width = arg
-            elif arg_num == 2:
-                self.height = arg
-            elif arg_num == 3:
-                self.x = arg
-            elif arg_num == 4:
-                self.y = arg
-            arg_num += 1
+        args_num = len(args)
+        if args_num >= 1:
+            self.id = args[0]
+        if args_num  >= 2:
+            self.width = args[1]
+        if args_num >= 3:
+            self.height = args[2]
+        if args_num >= 4:
+            self.x = args[3]
+        if args_num >= 5:
+            self.y = args[4]
 
     def update(self, *args, **kwargs):
         """
