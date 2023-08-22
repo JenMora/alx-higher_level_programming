@@ -1,12 +1,21 @@
 #!/usr/bin/python3
-"""This is a module that defines a square"""
+"""
+This is a module that defines a square
+
+"""
 
 
 from models.rectangle import Rectangle
-
+"""
+This is the parent class to the square child class
+"""
 
 class Square(Rectangle):
-    """ This is a class quare inheriting from rectangle"""
+    """
+    This is a class square inheriting from rectangle and the 
+    grandchild to Base
+
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         """Class constructor"""
