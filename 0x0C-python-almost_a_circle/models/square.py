@@ -10,9 +10,10 @@ from models.rectangle import Rectangle
 This is the parent class to the square child class
 """
 
+
 class Square(Rectangle):
     """
-    This is a class square inheriting from rectangle and the 
+    This is a class square inheriting from rectangle and the
     grandchild to Base
 
     """
