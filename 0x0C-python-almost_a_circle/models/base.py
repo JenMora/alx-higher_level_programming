@@ -88,8 +88,8 @@ class Base:
         """serializes in CSV"""
         if list_objs is None or list_objs == []:
             return
-        class_name = cls._name_
-        a_file = cls._name_ + ".csv"
+        class_name = cls.__name__
+        a_file = class_name + ".csv"
         with open(a_file, "w", newline="") as file:
             writer = csv.writer(file)
             for obj in list_objs:
