@@ -52,13 +52,13 @@ class Square(Rectangle):
             attr = ["size", "id", "x", "y"]
             for items in range(len(args)):
                 setattr(self, attr[items], args[items])
-            # if len(args) >= 2:
-                # self.size = args[1]
+                if len(args) >= 2:
+                    self.size = args[1]
         elif kwargs:
             for key, value in kwargs.items():
                 if key == "size":
                     self.width = value
-                    self.height = value
+                    # self.height = value
                 else:
                     setattr(self, key, value)
 
