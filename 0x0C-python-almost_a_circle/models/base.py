@@ -104,7 +104,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """ deserializes in CSV"""
+        """deserializes CSV"""
         a_file = cls.__name__ + ".csv"
         objects = []
         try:
@@ -119,7 +119,7 @@ class Base:
                         instance = cls(size, x, y, id)
                         objects.append(instance)
         except FileNotFoundError:
-            pass
+          pass
         return objects
 
     @staticmethod
