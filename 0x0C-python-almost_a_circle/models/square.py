@@ -26,15 +26,6 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """
-        This is teh string representation of the square inheriting from the
-        rectangle class
-        """
-
-        return "[Square] ({}) {:d}/{:d} - (:d}".format
-        (self.id, self.x, self.y, self.width)
-
     @property
     def size(self):
         """
@@ -82,3 +73,12 @@ class Square(Rectangle):
                 "x": self.x,
                 "y": self.y
                 }
+
+    def __str__(self):
+        """
+        This is a method that returns the print()
+        and str() representation of a Square.
+
+        """
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
