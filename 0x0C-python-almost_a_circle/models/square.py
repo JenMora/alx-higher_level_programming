@@ -48,19 +48,29 @@ class Square(Rectangle):
         updates attributes of the square
 
         """
+
+        args_num = len(args)
+        if args_num >= 1:
+            self.id = args[0]
+        if args_num >= 2:
+            self.size = args[1]
+        if args_num >= 3:
+            self.x = args[2]
+        if args_num >= 4:
+            self.y = args[3]
+
+    def update(self, *args, **kwargs):
+        """
+        Replace args with kwargs, changing attributes
+
+        """
         if args:
-            attr = ["size", "id", "x", "y"]
+            attr = ["id", "size", "x", "y"]
             for items in range(len(args)):
                 setattr(self, attr[items], args[items])
-                if len(args) >= 2:
-                    self.size = args[1]
         elif kwargs:
             for key, value in kwargs.items():
-                if key == "size":
-                    self.width = value
-                    # self.height = value
-                else:
-                    setattr(self, key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """
