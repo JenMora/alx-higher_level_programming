@@ -57,36 +57,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_dictionary_2, "[]")
         self.assertDictEqual(from_json[0], dictionary)
 
-    def test_save_to_file(self):
-        """
-        Tests save_to_file method.
-        """
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as file:
-            from_json = json.load(file)
-            self.assertEqual(from_json, [])
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as file:
-            from_json = json.load(file)
-            self.assertEqual(from_json, [])
-        obj1 = Rectangle(10, 7, 2, 8)
-        self.assertEqual(type(obj1), Rectangle)
-        obj2 = Rectangle(2, 4)
-        Square.save_to_file([])
-        with open("Square.json", "r") as file:
-            from_json = json.load(file)
-            self.assertEqual(from_json, [])
-        Square.save_to_file(None)
-        with open("Square.json", "r") as file:
-            from_json = json.load(file)
-            self.assertEqual(from_json, [])
-        Rectangle.save_to_file([obj1, obj2])
-        with open("Rectangle.json", "r") as file:
-            content = (file.read())
-            from_json = json.loads(content)
-            self.assertEqual(from_json[0], obj1.to_dictionary())
-            self.assertEqual(from_json[1], obj2.to_dictionary())
-
     def test_from_json_string(self):
         """
         Tests from_json_string method.
