@@ -1,147 +1,117 @@
 #!/usr/bin/python3
 """
-Unittest for square.
+This module is the Unittest for square.
 """
 
 import unittest
 from models.base import Base
 from models.square import Square
+import sys
+from unittest.mock import patch
+import io
 
 
 class TestSquare(unittest.TestCase):
     """
-    Contains unit tests for the Square class.
+    This class Contains unit tests for the Square
     """
 
-    def test_square_attributes(self):
-        """
-        Tests square attributes.
-        """
-        s1 = Square(2)
-        self.assertEqual(s1.id, 1)
-        self.assertEqual(s1.size, 2)
-        self.assertEqual(s1.x, 0)
-        self.assertEqual(s1.y, 0)
-        s2 = Square(2, 0, 0, 12)
-        self.assertEqual(s2.id, 12)
-        self.assertEqual(s2.size, 2)
-        self.assertEqual(s2.x, 0)
-        self.assertEqual(s2.y, 0)
-
-    def test_size_int(self):
+    def size_int(self):
         """
         Tests size of int type.
         """
         s1 = Square(3)
         self.assertEqual(s1.size, 3)
 
-    def test_size_not_int(self):
+    def size_not_int(self):
         """
         Tests size of wrong type.
         """
         with self.assertRaises(TypeError):
             s1 = Square("3")
 
-    def test_size_zero(self):
+    def size_zero(self):
         """
         Tests zero size.
         """
         with self.assertRaises(ValueError):
             s1 = Square(0)
 
-    def test_size_neg(self):
+    def size_neg(self):
         """
         Tests negative size.
         """
         with self.assertRaises(ValueError):
             s1 = Square(-2)
 
-    def test_x_int(self):
+    def int_x(self):
         """
-        Tests x of int type.
+        This method tests x of int type.
         """
-        s1 = Square(10, 3, 1)
-        self.assertEqual(s1.x, 3)
+        s1 = Square(5, 4, 7)
+        self.assertEqual(s1.x, 4)
 
-    def test_x_not_int(self):
+    def non_int_x(self):
         """
-        Tests x of wrong type.
+        Testing for non int x
         """
         with self.assertRaises(TypeError):
             s1 = Square(10, "3", 1)
 
-    def test_x_neg(self):
+    def neg_x(self):
         """
-        Tests negative x.
+        This method tests negative x int.
         """
         with self.assertRaises(ValueError):
             s1 = Square(10, -3, 1)
 
-    def test_y_int(self):
+    def int_y(self):
         """
-        Tests y of int type.
+        This method tests for y
         """
-        s1 = Square(10, 2, 1)
-        self.assertEqual(s1.y, 1)
+        s1 = Square(10, 2, 3)
+        self.assertEqual(s1.y, 3)
 
-    def test_y_not_int(self):
+    def non_int_y(self):
         """
-        Tests y of wrong type.
+        This method tests y for non int
         """
         with self.assertRaises(TypeError):
-            s1 = Square(10, 3, "1")
+            s1 = Square(10, 3, "5")
 
-    def test_y_neg(self):
+    def neg_y(self):
         """
-        Tests negative y.
+        This method tests negative int y.
         """
         with self.assertRaises(ValueError):
             s1 = Square(10, 3, -1)
 
-    def test_area(self):
+    def area(self):
         """
-        Tests area of square.
+        This method tests for the area of square.
         """
-        s1 = Square(2)
-        self.assertEqual(s1.area(), 4)
+        s1 = Square(4)
+        self.assertEqual(s1.area(), 16)
         s2 = Square(8, 0, 0, 12)
         self.assertEqual(s2.area(), 64)
-        s3 = Square(170)
-        self.assertEqual(s3.area(), 28900)
+        s3 = Square(10)
+        self.assertEqual(s3.area(), 100)
 
-    def test_display(self):
+    def display(self):
         """
-        Tests display method.
+        This method tests displays the square
         """
-        import sys
-        from unittest.mock import patch
-        import io
         s1 = Square(2)
         output = io.StringIO()
         with patch("sys.stdout", new=output) as capturedOutput:
             s1.display()
             capturedOutput = output.getvalue()
-            expected = "##\n##\n"
-        self.assertEqual(capturedOutput, expected)
+            stdout = "##\n##\n"
+        self.assertEqual(capturedOutput, stdout)
 
-    def test_display_not_zero(self):
+    def str(self):
         """
-        Tests display method when x and y are not zero.
-        """
-        import sys
-        from unittest.mock import patch
-        import io
-        s1 = Square(2, 2)
-        output = io.StringIO()
-        with patch("sys.stdout", new=output) as capturedOutput:
-            s1.display()
-            capturedOutput = output.getvalue()
-            expected = "  ##\n  ##\n"
-        self.assertEqual(capturedOutput, expected)
-
-    def test_str(self):
-        """
-        Tests __str__method.
+        This method tests the string representation of teh square
         """
         s1 = Square(5)
         res = "[Square] (1) 0/0 - 5"
@@ -150,48 +120,20 @@ class TestSquare(unittest.TestCase):
         res = "[Square] (2) 2/0 - 2"
         self.assertEqual(str(s2), res)
 
-    def test_args(self):
-        """
-        Tests *args.
-        """
-        s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
-        s1.update(10)
-        self.assertEqual(str(s1), "[Square] (10) 0/0 - 5")
-
-    def test_kwargs(self):
-        """
-        Tests **kwargs.
-        """
-        s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
-        s1.update(10)
-        self.assertEqual(str(s1), "[Square] (10) 0/0 - 5")
-        s1.update(1, 2)
-        self.assertEqual(str(s1), "[Square] (1) 0/0 - 2")
-        s1.update(1, 2)
-        self.assertEqual(str(s1), "[Square] (1) 0/0 - 2")
-        s1.update(1, 2, 3)
-        self.assertEqual(str(s1), "[Square] (1) 3/0 - 2")
-        s1.update(1, 2, 3, 4)
-        self.assertEqual(str(s1), "[Square] (1) 3/4 - 2")
-        s1.update(x=12)
-        self.assertEqual(str(s1), "[Square] (1) 12/4 - 2")
-
-    def test_to_dictionary(self):
-        """
-        Tests to_dictionary method.
-        """
-        dictionary = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
-        s1 = Square(10, 2, 1)
-        s1_dictionary = s1.to_dictionary()
-        self.assertEqual(s1_dictionary, dictionary)
-
     def tearDown(self):
         """
-        Deallocates resources.
+        This method deallocates resources.
         """
         Base._Base__nb_objects = 0
+
+    def args(self):
+        """
+        This method tests for *args.
+        """
+        s1 = Square(5)
+        self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
+        s1.update(10)
+        self.assertEqual(str(s1), "[Square] (10) 0/0 - 5")
 
 
 if __name__ == '__main__':

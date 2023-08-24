@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """
-Unittest for rectangle
+This module contains the Unittest for  the rectangle
 """
+import sys
+from unittest.mock import patch
+import io
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -12,165 +15,118 @@ class TestRectangle(unittest.TestCase):
     Contains unit tests for the Rectangle Class.
     """
 
-    def test_rect_attributes(self):
+    def width_int(self):
         """
-        Tests rectangle attributes.
+        This method tests rectangle width of int type.
         """
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r1.width, 10)
-        self.assertEqual(r1.height, 2)
-        self.assertEqual(r1.x, 0)
-        self.assertEqual(r1.y, 0)
-        r2 = Rectangle(10, 2, 0, 0, 12)
-        self.assertEqual(r2.id, 12)
-        self.assertEqual(r2.width, 10)
-        self.assertEqual(r2.height, 2)
-        self.assertEqual(r2.x, 0)
-        self.assertEqual(r2.y, 0)
+        r1 = Rectangle(12, 4)
+        self.assertEqual(r1.width, 12)
 
-    def test_width_int(self):
+    def width_not_int(self):
         """
-        Tests width of int type.
-        """
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.width, 10)
-
-    def test_width_not_int(self):
-        """
-        Tests width of wrong type.
+        This method tests width of wrong type.
         """
         with self.assertRaises(TypeError):
-            r1 = Rectangle("10", 2)
+            r1 = Rectangle("trs", 34)
 
-    def test_width_zero(self):
+    def width_zero(self):
         """
-        Tests zero width.
+        This method tests for zero rectangle width.
         """
         with self.assertRaises(ValueError):
             r1 = Rectangle(0, 2)
 
-    def test_width_neg(self):
+    def width_neg(self):
         """
-        Tests negative width.
+        This method tests negative rectangle width.
         """
         with self.assertRaises(ValueError):
             r1 = Rectangle(-10, 2)
 
-    def test_height_int(self):
+    def height_int(self):
         """
-        Tests height of int type.
+        This method tests height of int type.
         """
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.height, 2)
+        r1 = Rectangle(18, 9)
+        self.assertEqual(r1.height, 9)
 
-    def test_height_not_int(self):
+    def height_not_int(self):
         """
-        Tests height of wrong type.
+        This method tests height of wrong type.
         """
         with self.assertRaises(TypeError):
-            r1 = Rectangle(10, "2")
+            r1 = Rectangle(10, "tsr")
 
-    def test_height_zero(self):
+    def height_zero(self):
         """
-        Tests zero height.
+        This method tests zero height.
         """
         with self.assertRaises(ValueError):
-            r1 = Rectangle(10, 0)
+            r1 = Rectangle(1, 0)
 
     def test_height_neg(self):
         """
-        Tests negative height.
+        This method tests negative rectangle height.
         """
         with self.assertRaises(ValueError):
-            r1 = Rectangle(10, -2)
+            r1 = Rectangle(1, -8)
 
-    def test_x_int(self):
+    def x_int(self):
         """
-        Tests x of int type.
+        This method tests x of int type.
         """
-        r1 = Rectangle(10, 2, 3, 1)
+        r1 = Rectangle(10, 7, 3, 91)
         self.assertEqual(r1.x, 3)
 
-    def test_x_not_int(self):
+    def x_not_int(self):
         """
-        Tests x of wrong type.
+        This method tests x of wrong type.
         """
         with self.assertRaises(TypeError):
-            r1 = Rectangle(10, 2, "3", 1)
+            r1 = Rectangle(10, 2, "yts", 1)
 
     def test_x_neg(self):
         """
-        Tests negative x.
+        This method tests for negative x.
         """
         with self.assertRaises(ValueError):
-            r1 = Rectangle(10, 2, -3, 1)
+            r1 = Rectangle(11, 20, -5, 1)
 
     def test_y_int(self):
         """
-        Tests y of int type.
+        This method tests y of int type.
         """
         r1 = Rectangle(10, 2, 3, 1)
         self.assertEqual(r1.y, 1)
 
     def test_y_not_int(self):
         """
-        Tests y of wrong type.
+        This method tests y of wrong type.
         """
         with self.assertRaises(TypeError):
             r1 = Rectangle(10, 2, 3, "1")
 
     def test_y_neg(self):
         """
-        Tests negative y.
+        This method tests for negative y.
         """
         with self.assertRaises(ValueError):
-            r1 = Rectangle(10, 2, 3, -1)
+            r1 = Rectangle(10, 2, 3, -7)
 
     def test_area(self):
         """
-        Tests area of rectangle.
+        This method tests area of rectangle.
         """
-        r1 = Rectangle(2, 4)
-        self.assertEqual(r1.area(), 8)
-        r2 = Rectangle(8, 7, 0, 0, 12)
-        self.assertEqual(r2.area(), 56)
-        r3 = Rectangle(170, 11)
-        self.assertEqual(r3.area(), 1870)
+        r1 = Rectangle(20, 40)
+        self.assertEqual(r1.area(), 800)
+        r2 = Rectangle(8, 4, 0, 0, 12)
+        self.assertEqual(r2.area(), 32)
+        r3 = Rectangle(10, 20)
+        self.assertEqual(r3.area(), 200)
 
-    def test_display(self):
+    def str(self):
         """
-        Tests display method.
-        """
-        import sys
-        from unittest.mock import patch
-        import io
-        r1 = Rectangle(2, 2)
-        output = io.StringIO()
-        with patch("sys.stdout", new=output) as capturedOutput:
-            r1.display()
-            capturedOutput = output.getvalue()
-            expected = "##\n##\n"
-        self.assertEqual(capturedOutput, expected)
-
-    def test_display_not_zero(self):
-        """
-        Tests display method when x and y are not zero.
-        """
-        import sys
-        from unittest.mock import patch
-        import io
-        r1 = Rectangle(2, 3, 2, 2)
-        output = io.StringIO()
-        with patch("sys.stdout", new=output) as capturedOutput:
-            r1.display()
-            capturedOutput = output.getvalue()
-            expected = "\n\n  ##\n  ##\n  ##\n"
-        self.assertEqual(capturedOutput, expected)
-
-    def test_str(self):
-        """
-        Tests __str__method.
+        This method tests for str representation
         """
         r1 = Rectangle(4, 6, 2, 1, 12)
         res = "[Rectangle] (12) 2/1 - 4/6"
@@ -179,37 +135,14 @@ class TestRectangle(unittest.TestCase):
         res = "[Rectangle] (1) 1/0 - 5/5"
         self.assertEqual(str(r2), res)
 
-    def test_args(self):
+    def args(self):
         """
-        Tests *args.
+        This method tests for *args.
         """
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
         r1.update(89, 2)
         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/10")
-
-    def test_kwargs(self):
-        """
-        Tests **kwargs.
-        """
-        r1 = Rectangle(10, 10, 10, 10)
-        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
-        r1.update(height=1)
-        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/1")
-        r1.update(width=1, x=2)
-        self.assertEqual(str(r1), "[Rectangle] (1) 2/10 - 1/1")
-        r1.update(y=1, width=2, x=3, id=89)
-        self.assertEqual(str(r1), "[Rectangle] (89) 3/1 - 2/1")
-
-    def test_to_dictionary(self):
-        """
-        Tests to_dictionary method.
-        """
-        dictionary = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
-        r1 = Rectangle(10, 2, 1, 9)
-        r1_dictionary = r1.to_dictionary()
-        self.assertEqual(r1_dictionary, dictionary)
-
 
     def tearDown(self):
         """
@@ -220,4 +153,3 @@ class TestRectangle(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

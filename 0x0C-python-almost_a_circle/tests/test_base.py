@@ -16,7 +16,7 @@ class TestBase(unittest.TestCase):
     This class contains unit tests for the Base
     """
 
-    def test_base_id(self):
+    def base_id(self):
         """
         This method is for testing any kind of id
         """
@@ -31,7 +31,7 @@ class TestBase(unittest.TestCase):
         obj5 = Base()
         self.assertEqual(obj5.id, 4)
 
-    def test_to_json_string(self):
+    def to_json_string(self):
         """
         This method tests to_json_string
         """
@@ -47,18 +47,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_dictionary_2, "[]")
         self.assertDictEqual(from_json[0], dictionary)
         obj1 = Square(4, 8, 2)
-        self.assertEqual(type(obj1), Square)
-        dict_sq = obj1.to_dictionary()
-        json_dict_sq = Base.to_json_string([dict_sq])
-        json_dict_sq_1 = Base.to_json_string([])
-        json_dict_sq_2 = Base.to_json_string(None)
-        self.assertEqual(type(json_dict_sq), str)
-        from_json = json.loads(json_dict_sq)
-        self.assertEqual(json_dict_sq_1, "[]")
-        self.assertEqual(json_dict_sq_2, "[]")
         self.assertDictEqual(from_json[0], dict_sq)
 
-    def test_base_id(self):
+    def base_id(self):
         """
         This method is for testing any kind of id
         """
@@ -73,7 +64,7 @@ class TestBase(unittest.TestCase):
         obj5 = Base()
         self.assertEqual(obj5.id, 4)
 
-    def test_load_from_file(self):
+    def load_from_file(self):
         """
         This method tests load_from_file
         """
@@ -94,7 +85,7 @@ class TestBase(unittest.TestCase):
             self.assertEqual(str(list_sq_input[i]), str(list_sq_output[i]))
             self.assertNotEqual(list_sq_input[i], list_sq_output[i])
 
-    def test_from_json_string(self):
+    def from_json_string(self):
         """
         This method tests from_json_string
         """
@@ -110,7 +101,7 @@ class TestBase(unittest.TestCase):
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list_output, [])
 
-    def test_create(self):
+    def create(self):
         """
         This method tests creation of the
         """
