@@ -20,10 +20,8 @@ class Rectangle {
     }
   }
   double () {
-    if (this.width > 0 && this.height > 0) {
       this.width *= 2;
       this.height *= 2;
     }
-  }
 }
 module.exports = Rectangle;
