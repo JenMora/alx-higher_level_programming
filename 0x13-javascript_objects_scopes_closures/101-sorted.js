@@ -1,11 +1,18 @@
-#!/usr/bin/node
-const dict = require('./101-data.js').dict;
-const newDict = {};
-for (const user in dict) { 
-  const key = dict[user];
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = [];
+const data = require('./101-data'); // Import the dictionary from 101-data.js
+
+// Initialize a new dictionary to store user IDs by occurrence
+const userIDsByOccurrence = {};
+
+// Iterate through the original dictionary and populate the new dictionary
+for (const userID in data) {
+  const occurrence = data[userID];
+
+  if (!userIDsByOccurrence[occurrence]) {
+    userIDsByOccurrence[occurrence] = [];
   }
-    newDict[dict[key]].push(key);
+
+  userIDsByOccurrence[occurrence].push(userID);
 }
-console.log(newDict);
+
+// Print the new dictionary
+console.log(userIDsByOccurrence);
