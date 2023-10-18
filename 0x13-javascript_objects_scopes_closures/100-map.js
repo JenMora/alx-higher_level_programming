@@ -1,7 +1,5 @@
 #!/usr/bin/node
-const dataModule = require('./100-data.js');
-const list = dataModule.list;
-// val - current element, index - position of current element
-const res = list.map((val, index) => val * index);
+const list = require('./100-data.js').list;
 console.log(list);
-console.log(res);
+const newList = list.map((x, index) => x * index);
+console.log(newList);
