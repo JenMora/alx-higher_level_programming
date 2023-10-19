@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const myVar = {
-  type: 'variable',
+  type: 'object',
   value: 12
 };
 console.log(myVar);
