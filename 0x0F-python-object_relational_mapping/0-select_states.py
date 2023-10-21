@@ -22,23 +22,27 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        sys.exit(1)
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+        print("Usage: python script.py <username> <password> <database_name>")
+    else:
+        mysql_username = sys.argv[1]
+        mysql_password = sys.argv[2]
+        database_name = sys.argv[3]
     """
-    Connects to a MySQL server running on localhost at port 3306
+    Connects to a MySQL server at a local host and port 3306
     """
     conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                            passwd=mysql_password, db=database_name,
                            charset="utf8")
     """
-    Cursor object to interact with database
+    interact the object to interact with database through a cursor
     """
-    cur = conn.cursor()
-    cur.execute("SELECT id, name FROM states ORDER BY states.id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name FROM states ORDER BY states.id ASC")
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
+    """
+    close the connection and the cursor
+    """
+    cursor.close()
     conn.close()
