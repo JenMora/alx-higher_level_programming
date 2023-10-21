@@ -51,4 +51,4 @@ if __name__ == '__main__':
         mysql_username = sys.argv[1]
         mysql_password = sys.argv[2]
         database_name = sys.argv[3]
-        list_states(mysql_username, mysql_password ,database_name)
+        list_states(mysql_username, mysql_password, database_name)
