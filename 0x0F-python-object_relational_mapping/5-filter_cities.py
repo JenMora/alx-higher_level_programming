@@ -38,7 +38,7 @@ if __name__ == "__main__":
     interact the object to interact with database through a cursor
     """
     cursor = conn.cursor()
-    query =  """SELECT cities.name FROM cities INNER JOIN states
+    query = """SELECT cities.name FROM cities INNER JOIN states
     ON cities.state_id = states.id
     WHERE states.name = _utf8mb4 %s COLLATE utf8mb4_0900_as_cs
     ORDER BY cities.id ASC"""
