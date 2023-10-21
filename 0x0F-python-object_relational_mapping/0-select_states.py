@@ -23,16 +23,17 @@ def list_states(username, password, database_name):
     """
     try:
         # Connect to the MySQL server
-        conn = MySQLdb.connect(host='localhost', port=3306, user=username,
-                               passwd=password, db=database_name)
+        conn = MySQLdb.connect(host='localhost', port=3306,
+                               user=mysql_username, passwd=mysql_password,
+                               db=database_name, charset="utf8")
         cursor = conn.cursor()
 
         # Retrieve the states by executing the SQL query
-        cursor.execute("SELECT * FROM states ORDER BY id")
-        states = cursor.fetchall()
+        cursor.execute("SELECT id, name  FROM states ORDER BY states.id ASC")
+        tables = cursor.fetchall()
 
         # Display the results
-        for state in states:
+        for state in tables:
             print(state)
 
         # Close the cursor and connection
@@ -47,5 +48,7 @@ if __name__ == '__main__':
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database_name>")
     else:
-        user, passwd, db = sys.argv[1], sys.argv[2], sys.argv[3]
-        list_states(user, passwd, db)
+        mysql_username = sys.argv[1]
+        mysql_password = sys.argv[2]
+        database_name = sys.argv[3]
+        list_states(mysql_username, mysql_password ,database_name)
