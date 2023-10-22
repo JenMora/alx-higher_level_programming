@@ -24,8 +24,8 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
 
     # Create a MySQL database connection
-    db_url = f'mysql+mysqldb://{db_user}:{db_password}@localhost:3306/{db_name}'
-    engine = create_engine(db_url, pool_pre_ping=True)
+    db_ur = f'mysql+mysqldb://{db_user}:{db_password}@localhost:3306/{db_name}'
+    engine = create_engine(db_ur, pool_pre_ping=True)
 
     # Create a database session
     session = Session(engine)
