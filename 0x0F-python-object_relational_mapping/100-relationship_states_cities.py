@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     # Create the State "California" and the City "San Francisco"
     # and associate them
-    state  = State(name="California")
+    state = State(name="California")
     city = City(name="San Francisco", state=state)
 
     session.add(state)
