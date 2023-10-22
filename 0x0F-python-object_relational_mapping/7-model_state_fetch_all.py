@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # Retrieve and display the list of states from the 'State' table
     states = session.query(State).order_by(State.id).all()
     for state in states:
-         print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))
 
     # Close the database session to release resources
     session.close()
