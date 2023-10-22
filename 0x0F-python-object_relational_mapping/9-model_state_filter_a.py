@@ -31,10 +31,10 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # Query the states containing the letter "a"
-    states_with_a = session.query(State).filter
-    (State.name.like('%a%')).order_by(State.id).all()
+    ses = session.query
+    s = ses(State).filter(State.name.like('%a%')).order_by(State.id).all()
 
-    for state in states_with_a:
+    for state in s:
         print("{}: {}".format(state.id, state.name))
 
     # Close the database session
