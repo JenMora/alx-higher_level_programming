@@ -12,7 +12,7 @@ Prerequisites:
 """
 
 # Import necessary modules from SQLAlchemy
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 # Create the Base instance, which will be the base for all
