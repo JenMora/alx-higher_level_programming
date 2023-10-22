@@ -31,7 +31,7 @@ class City(Base):
     __tablename__ = 'cities'
 
     # Define class attributes that map to columns in the 'cities' table
-    
+
     id = Column(Integer, autoincrement=True, unique=True, nullable=False,
                 primary_key=True)
     name = Column(String(128), nullable=False)
