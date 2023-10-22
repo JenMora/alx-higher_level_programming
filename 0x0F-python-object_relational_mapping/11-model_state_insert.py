@@ -31,11 +31,11 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # create a new state object and add it to the database
-    new_state = State(name="Lousiana")
+    new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
 
-    print(new_state.id)
+    print(f"{new_state.id}")
 
     # Close the database session
     session.close()
