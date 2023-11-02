@@ -4,6 +4,7 @@ This module contains a function called find_peak that searches for a peak
 in a list of unsorted integers.
 """
 
+
 def find_peak(numbers):
     """
     This method finds a peak in a list of unsorted integers.
