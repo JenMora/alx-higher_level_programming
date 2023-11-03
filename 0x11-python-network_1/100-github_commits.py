@@ -15,6 +15,6 @@ if __name__ == "__main__":
     for commit in r.json()[:10]:
         print(
             "{}: {}".format(
-                commit['add'], commit['commit']['owner']['name']
+                commit['sha'], commit['commit']['author']['name']
             )
         )
