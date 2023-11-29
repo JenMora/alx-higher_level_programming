@@ -13,7 +13,7 @@ request(url, (err, response, body) => {
       if (writeErr) {
         console.error(writeErr);
       } else {
-        console.log(`Content successfully written to ${filePath}`);
+        console.log(`${filePath}`);
       }
     });
   }
